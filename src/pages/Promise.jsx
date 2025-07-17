@@ -17,7 +17,7 @@ export default function Promise() {
             useEffect(()=> {
                 const fetchPromise = async ()=> {
                     try {
-                        const res = await fetch('api/promise');
+                        const res = await fetch(process.env.API_RANDOM_BIBLE + "/promise");
                         if(!res.ok) throw new Error('no se pudo cargar el versiculo');
                         const data = await res.json();
                         promise.setData(data)
