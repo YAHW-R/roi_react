@@ -18,7 +18,7 @@ export default function Verse() {
         useEffect(()=> {
             const fetchVerse = async ()=> {
                 try {
-                    const res = await fetch('api/verse');
+                    const res = await fetch(process.env.API_RANDOM_BIBLE + "/verse");
                     if(!res.ok) throw new Error('no se pudo cargar el versiculo');
                     const data = await res.json();
                     verse.setData(data)
